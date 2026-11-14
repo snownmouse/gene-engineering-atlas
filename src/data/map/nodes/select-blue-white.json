@@ -1,0 +1,55 @@
+{
+  "order": 28,
+  "zone": "select",
+  "id": "select-blue-white",
+  "title": "蓝白斑 α-互补",
+  "en": "Blue/White Screening",
+  "lane": "select",
+  "level": "L2",
+  "kicker": "SELECT / 04",
+  "summary": "lacZΔM15 与 lacZ′ 互补显蓝；MCS 被插入则变白。",
+  "blocks": [
+    {
+      "type": "p",
+      "text": "**α-互补（蓝白斑筛选）**：`lacZ` 编码 β-半乳糖苷酶；`lacZΔM15` 编码缺失第 11～41 位氨基酸的 ω 片段；`lacZ′` 编码含 140 个氨基酸与 MCS 的 α 片段。两者同时存在时恢复酶活性，在 IPTG/X-gal 存在下形成蓝色菌落；外源 DNA 插入 MCS 破坏 α 片段，菌落变白。"
+    },
+    {
+      "type": "list",
+      "items": [
+        "**IPTG**：异丙基-β-D-硫代半乳糖苷，诱导物；",
+        "**X-gal**：5-溴-4-氯-3-吲哚-β-D-半乳糖苷，底物与生色剂；",
+        "**Amp**：维持选择压力，只有带质粒的细胞能生长。"
+      ]
+    },
+    {
+      "type": "figure",
+      "figure": "plate-blue-white",
+      "caption": "蓝白斑筛选：同一套 lacZΔM15 宿主，左盘补全 α 片段呈蓝色，右盘被外源片段打断呈白色。"
+    },
+    {
+      "type": "figure",
+      "figure": "alpha-complement",
+      "caption": "把颜色拆到分子层：α 片段与 ω 片段互补才有酶活；外源片段插进 MCS 打断 α 片段，酶失活，菌落转白。"
+    },
+    {
+      "type": "table",
+      "head": [
+        "基因型组合",
+        "β-半乳糖苷酶",
+        "菌落颜色"
+      ],
+      "rows": [
+        [
+          "lacZΔM15 + lacZ′",
+          "有活性（α 互补）",
+          "蓝色"
+        ],
+        [
+          "lacZΔM15 + lacZ′（插入外源 DNA）",
+          "失活",
+          "白色"
+        ]
+      ]
+    }
+  ]
+}

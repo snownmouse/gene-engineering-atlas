@@ -1,0 +1,88 @@
+{
+  "order": 9,
+  "zone": "parts",
+  "id": "part-puc18",
+  "title": "pUC18 / pUC19",
+  "en": "pUC18/19",
+  "lane": "parts",
+  "level": "L2",
+  "kicker": "PART / 06",
+  "summary": "2 686 bp（GenBank L08752，1985 年构建）、500～700 拷贝、lacZ′ 与人工 MCS；pUC18/19 只差 MCS 方向。",
+  "blocks": [
+    {
+      "type": "p",
+      "text": "**pUC18/19** 于 **1985 年**由 Yanisch-Perron、Vieira 与 Messing 在 pBR322 基础上构建（Gene 33:103–119）。分子量更小（**2 686 bp**，GenBank L08752）、拷贝数更高（每个细胞 **500～700** 个，pBR322 约 15～20 个）、带 `lacZ′` 可做蓝白筛选，MCS 由人工合成的多个单一酶切位点构成。系列成员包括 pUC7～pUC11、pUC18、pUC19。"
+    },
+    {
+      "type": "table",
+      "head": [
+        "项目",
+        "pUC18 / pUC19"
+      ],
+      "rows": [
+        [
+          "大小",
+          "2 686 bp（GenBank L08752）"
+        ],
+        [
+          "拷贝数",
+          "每个细胞 500～700 个（pBR322 约 15～20 个）"
+        ],
+        [
+          "复制子",
+          "pMB1 松弛型"
+        ],
+        [
+          "筛选标记",
+          "amp^r（氨苄青霉素）"
+        ],
+        [
+          "报告基因",
+          "lacZ′，与宿主 lacZΔM15 做 α-互补"
+        ],
+        [
+          "MCS",
+          "EcoR I、Sac I、Kpn I、Sma I、BamH I、Xba I、Sal I、Pst I、Sph I、Hind III 等单一酶切位点"
+        ],
+        [
+          "通用引物",
+          "M13 forward / reverse，位于 MCS 两侧，可直接测序"
+        ],
+        [
+          "常用宿主",
+          "JM109、DH5α 等带 lacZΔM15 的菌株"
+        ]
+      ],
+      "caption": "参数按 GenBank L08752 与 Yanisch-Perron et al.（Gene, 1985）；pUC18 与 pUC19 大小相同，MCS 方向相反。"
+    },
+    {
+      "type": "p",
+      "text": "**蓝白斑筛选**：宿主 lacZΔM15 只提供 LacZ 的 ω 片段，质粒 lacZ′ 提供 α 片段，两者互补才有 β-半乳糖苷酶活性，切开 X-gal 生成蓝色产物。外源片段插进 MCS 会打断 lacZ′，α 互补消失，菌落呈白色。IPTG 诱导 lac 启动子，保证 lacZ′ 表达。"
+    },
+    {
+      "type": "note",
+      "tone": "memory",
+      "title": "pUC18 与 pUC19 只差 MCS 方向",
+      "lines": [
+        "两者都是 2 686 bp、amp^r、lacZ′、pMB1 复制子，拷贝数相同。",
+        "MCS 里同样的位点顺序相反：pUC18 是 EcoR I→Hind III，pUC19 是 Hind III→EcoR I。",
+        "选哪个取决于插入片段的方向与测序引物；需要反向测序时换另一个更省事。"
+      ]
+    },
+    {
+      "type": "note",
+      "tone": "verify",
+      "title": "pUC18 的构建年份",
+      "lines": [
+        "pUC18/19 由 J. Messing 与 J. Vieira 在 pBR322 基础上改建；另有资料把构建年份记为 1978 年。",
+        "构建论文为 Yanisch-Perron C, Vieira J, Messing J. Gene, 1985, 33(1):103–119；GenBank L08752 为 2 686 bp。",
+        "1978 年另有黏粒载体与 pBR322 的相关工作。"
+      ]
+    },
+    {
+      "type": "figure",
+      "figure": "plasmid-puc18",
+      "caption": "pUC18：小、高拷贝、带 lacZ′ 与人工 MCS，是蓝白斑筛选的标准骨架。"
+    }
+  ]
+}

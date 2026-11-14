@@ -1,0 +1,50 @@
+{
+  "order": 30,
+  "zone": "express",
+  "id": "express-tag",
+  "title": "融合标签与纯化",
+  "en": "Tags & Purification",
+  "lane": "express",
+  "level": "L2",
+  "kicker": "EXPRESS / 02",
+  "summary": "His、FLAG、V5、GST：给产物装一个可抓的把手。",
+  "blocks": [
+    {
+      "type": "lead",
+      "text": "标签把「表达出来了」变成「能抓出来」：用一段已知序列做纯化或检测的把手。"
+    },
+    {
+      "type": "table",
+      "head": [
+        "标签",
+        "氨基酸序列 / 特征"
+      ],
+      "rows": [
+        [
+          "His-tag",
+          "HHHHHH"
+        ],
+        [
+          "FLAG-tag",
+          "DYKDDDDK"
+        ],
+        [
+          "V5-tag",
+          "GKPIPNPLLGLDST"
+        ],
+        [
+          "GST-tag",
+          "谷胱甘肽 S-转移酶标签（如 pGEX 载体）"
+        ]
+      ]
+    },
+    {
+      "type": "note",
+      "tone": "memory",
+      "title": "标签不是越大越好",
+      "lines": [
+        "GST 帮助折叠与纯化但分子量大；His 短、纯化条件温和。"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,35 @@
+{
+  "order": 26,
+  "zone": "select",
+  "id": "select-auxotroph",
+  "title": "营养缺陷型 / supF / sacB",
+  "en": "Auxotrophy & Counter-selection",
+  "lane": "select",
+  "level": "L2",
+  "kicker": "SELECT / 02",
+  "summary": "缺什么补什么：氨基酸与核苷酸标记、supF 抑制、sacB 正向选择。",
+  "blocks": [
+    {
+      "type": "p",
+      "text": "**营养缺陷型标记**：例如毕赤酵母 GS115 为组氨酸缺陷型，不含组氨酸基因的受体菌在缺组氨酸培养基上不能生长，只有带组氨酸基因的载体进入后才可生长。常用标记包括氨基酸类（Leu、His、Trp、Lys 合成基因）和核苷酸类（URA、ADE）。"
+    },
+    {
+      "type": "p",
+      "text": "**supF 抑制基因**：无义突变分赭石（UAA）、琥珀（UAG）、乳白（UGA）三类。`supF` 编码细菌的抑制性 tRNA，可在 UAG 密码子上编译酪氨酸。若宿主带琥珀突变的 `tet^r`，只有转入含 `supF` 的质粒后，宿主才会对四环素产生抗性。"
+    },
+    {
+      "type": "p",
+      "text": "**sacB 正向选择**：`sacB` 编码果聚糖蔗糖酶，在含蔗糖的培养基中对大肠杆菌致死，因此可用于**插入失活**筛选重组子。"
+    },
+    {
+      "type": "note",
+      "tone": "caution",
+      "title": "常用浓度",
+      "lines": [
+        "氨基酸补充：His 20–30 mg/L、Leu 30–50 mg/L、Trp 20–40 mg/L；核苷酸：Ura 20 mg/L、Ade 20–30 mg/L。",
+        "5-FOA 反选 ura3：1 mg/mL，现配现用；sacB 反选蔗糖 5–10%，30 ℃ 培养。",
+        "缺陷培养基要先确认宿主确实缺陷，否则标记不成立；回变株会在缺陷板上长出背景。"
+      ]
+    }
+  ]
+}

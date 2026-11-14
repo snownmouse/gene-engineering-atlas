@@ -1,0 +1,53 @@
+{
+  "note": "六工序是讲法，八步是骨架。一步只归一序，一序可含多步；映射只在这一处维护，不改 steps.json。",
+  "processes": [
+    {
+      "id": "qie",
+      "char": "切",
+      "title": "切出目的基因",
+      "en": "CUT OUT",
+      "gloss": "把要用的那一段 DNA 从来源里取出来，再在它和载体上切出能对上的末端。",
+      "steps": ["target", "cut"]
+    },
+    {
+      "id": "jie",
+      "char": "接",
+      "title": "连接成重组分子",
+      "en": "JOIN",
+      "gloss": "片段与载体末端对上，接成一个完整、能自我复制的环。",
+      "steps": ["ligate"]
+    },
+    {
+      "id": "zhuan",
+      "char": "转",
+      "title": "导入宿主",
+      "en": "TRANSFER",
+      "gloss": "把重组 DNA 送进细胞，让它有机会被复制和表达。",
+      "steps": ["deliver"]
+    },
+    {
+      "id": "zeng",
+      "char": "增",
+      "title": "复制扩增·挑重组子",
+      "en": "AMPLIFY",
+      "gloss": "借宿主把重组分子复制扩增，用标记把重组子挑出来；卷末把产物用起来，算这一步的收尾。",
+      "steps": ["select", "apply"]
+    },
+    {
+      "id": "jian",
+      "char": "检",
+      "title": "酶切·PCR·测序",
+      "en": "CHECK",
+      "gloss": "从 DNA、RNA、蛋白三个层面验证：接对了没有，做对了没有。",
+      "steps": ["verify"]
+    },
+    {
+      "id": "yang",
+      "char": "养",
+      "title": "表达并取产物",
+      "en": "RAISE",
+      "gloss": "让基因在宿主里表达，把蛋白或代谢产物攒出来。",
+      "steps": ["express"]
+    }
+  ]
+}

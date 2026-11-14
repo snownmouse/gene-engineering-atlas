@@ -1,0 +1,35 @@
+{
+  "order": 17,
+  "zone": "digest",
+  "id": "op-digest",
+  "title": "切割",
+  "en": "Digestion",
+  "lane": "digest",
+  "level": "L1",
+  "kicker": "OP / 02",
+  "summary": "用限制酶切开载体与片段，让两端能对上。",
+  "blocks": [
+    {
+      "type": "lead",
+      "text": "切割是链路的第一个动手环节：把载体切开、把目的片段切出来，两端要能对得上。"
+    },
+    {
+      "type": "p",
+      "text": "限制性核酸内切酶是四类工具酶之一，负责在体外切割 DNA。载体图谱上常标出 BamH I、Pst I、EcoR I 等单一酶切位点，用来做插入失活或定向克隆。"
+    },
+    {
+      "type": "note",
+      "tone": "memory",
+      "title": "位点密度与切口",
+      "lines": [
+        "4 bp 识别位点（如 Sau3A I 的 GATC）平均每 256 bp 一个，切得碎；6 bp 约每 4 kb 一个；8 bp 稀有酶约每 65 kb 一个。",
+        "两条链错开 4 个碱基切，留下 5′-突出端（如 EcoR I）；错开 2 个留 3′-突出端（如 Pst I）；不错开就是平端（如 Sma I）。",
+        "星活性：甘油 >5%、酶量过高、低离子强度时，酶会在近似位点乱切。"
+      ]
+    },
+    {
+      "type": "demo",
+      "demo": "digest"
+    }
+  ]
+}

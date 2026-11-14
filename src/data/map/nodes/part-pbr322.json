@@ -1,0 +1,56 @@
+{
+  "order": 8,
+  "zone": "parts",
+  "id": "part-pbr322",
+  "title": "pBR322",
+  "en": "pBR322",
+  "lane": "parts",
+  "level": "L2",
+  "kicker": "PART / 05",
+  "summary": "4 361 bp（GenBank J01749）的基准质粒：两个抗性基因、一个 BamH I 插入失活位点。",
+  "blocks": [
+    {
+      "type": "table",
+      "head": [
+        "项目",
+        "pBR322"
+      ],
+      "rows": [
+        [
+          "大小",
+          "4 361 bp，环状双链 DNA（GenBank J01749）"
+        ],
+        [
+          "位点",
+          "含 30 多种限制酶的单一识别位点"
+        ],
+        [
+          "标记",
+          "四环素抗性基因 tet^r、氨苄青霉素抗性基因 amp^r"
+        ],
+        [
+          "复制区",
+          "来自 pMB1（松弛型）"
+        ],
+        [
+          "构建",
+          "pSF124（含 amp^r）＋ pSC101（含 tet^r）＋ ColE1 复制起始点片段重组"
+        ],
+        [
+          "筛选",
+          "外源 DNA 插入 tet^r 内部的 BamH I 位点，插入失活筛选"
+        ]
+      ],
+      "caption": "最早应用于基因工程的载体之一，许多常用载体由它发展而来。"
+    },
+    {
+      "type": "p",
+      "text": "pBR322 失去了转移蛋白基因 **mob**，不能通过接合转移；但保留了 mob 的作用位点，能被 ColK 质粒编码的 mob 蛋白识别，若有 F 质粒参与仍可能转移。改进型中，**pBR325** 接入带 cm^r 的 Hae II 片段，使 EcoR I 也成为插入失活位点；**pAT153** 切去 Hae II 片段，既除去 mob 识别位点又提高拷贝数。"
+    },
+    {
+      "type": "figure",
+      "figure": "plasmid-pbr322",
+      "caption": "pBR322 的功能区与常用插入失活位点。环上弧段为示意，位点位置以图谱为准。"
+    }
+  ]
+}

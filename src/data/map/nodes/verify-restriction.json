@@ -1,0 +1,31 @@
+{
+  "order": 38,
+  "zone": "verify",
+  "id": "verify-restriction",
+  "title": "酶切鉴定",
+  "en": "Restriction Mapping",
+  "lane": "verify",
+  "level": "L2",
+  "kicker": "VERIFY / 04",
+  "summary": "把重组质粒切回片段，跑凝胶核对大小与方向。",
+  "blocks": [
+    {
+      "type": "lead",
+      "text": "酶切鉴定是用限制酶把重组质粒切回片段，跑凝胶看条带大小与组合。"
+    },
+    {
+      "type": "p",
+      "text": "pBR322 的 BamH I 位点可做插入失活：外源 DNA 插进 tet^r 内部后，重组子失去四环素抗性。凝胶电泳负责把切出的片段按大小分开，条带位置就是判据。"
+    },
+    {
+      "type": "note",
+      "tone": "caution",
+      "title": "单酶切与双酶切",
+      "lines": [
+        "单酶切只能看片段总大小；要定插入方向，需要两个位点组合的双酶切。这是归纳，判读标准按常规做法。",
+        "常用量：0.8–1.2% 琼脂糖、5–10 U 酶/μg DNA、37 ℃ 1–2 h；上样 100–300 ng， Marker 选 100 bp 或 1 kb ladder。",
+        "判读：插入片段阳性克隆应比空载体大一个插入长度；双酶切出现两条预期大小带才算方向正确。"
+      ]
+    }
+  ]
+}

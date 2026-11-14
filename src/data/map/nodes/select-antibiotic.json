@@ -1,0 +1,52 @@
+{
+  "order": 25,
+  "zone": "select",
+  "id": "select-antibiotic",
+  "title": "抗生素筛选",
+  "en": "Antibiotic Selection",
+  "lane": "select",
+  "level": "L1",
+  "kicker": "SELECT / 01",
+  "summary": "抗性基因与含药平板：不长的是背景，长出来的才是转化子。",
+  "blocks": [
+    {
+      "type": "table",
+      "head": [
+        "基因",
+        "抗性",
+        "简写"
+      ],
+      "rows": [
+        [
+          "氨苄青霉素抗性基因",
+          "ampicillin",
+          "amp^r"
+        ],
+        [
+          "卡那霉素抗性基因",
+          "kanamycin",
+          "kan^r"
+        ],
+        [
+          "四环素抗性基因",
+          "tetracycline",
+          "tet^r"
+        ],
+        [
+          "氯霉素抗性基因",
+          "chloramphenicol",
+          "cm^r"
+        ],
+        [
+          "新霉素抗性基因",
+          "neomycin",
+          "neo^r"
+        ]
+      ]
+    },
+    {
+      "type": "p",
+      "text": "`amp^r` 编码 **β-内酰胺环水解酶**，分泌进入细菌周质区，水解 β-内酰胺环，解除氨苄青霉素的毒性。平板筛选的逻辑很直接：不带抗性基因的受体菌在含抗生素的培养基上长不起来，带抗性基因载体的受体菌才能形成**阳性转化子**。"
+    }
+  ]
+}

@@ -1,0 +1,63 @@
+{
+  "title": "一次基因工程的最短路线",
+  "note": "八步只回答「最少要经过什么」。工具、载体、宿主、标记都不是步骤，是挂在步骤上的知识。",
+  "steps": [
+    {
+      "id": "target",
+      "no": 1,
+      "title": "拿到目的基因",
+      "en": "GET THE GENE",
+      "oneLine": "从基因组、cDNA 或化学合成拿到要操作的那一段 DNA。",
+      "side": "样品制备（基因组提取、RNA 反转录、PCR 扩增）是这一步的支线，不上主链。"
+    },
+    {
+      "id": "cut",
+      "no": 2,
+      "title": "切开",
+      "en": "CUT",
+      "oneLine": "用限制酶在载体和片段上切出能对上的末端。"
+    },
+    {
+      "id": "ligate",
+      "no": 3,
+      "title": "接起来",
+      "en": "LIGATE",
+      "oneLine": "把片段接进载体，得到一个完整、能复制的环。"
+    },
+    {
+      "id": "deliver",
+      "no": 4,
+      "title": "送进宿主",
+      "en": "DELIVER",
+      "oneLine": "把重组 DNA 送进细胞，让它有机会复制。"
+    },
+    {
+      "id": "select",
+      "no": 5,
+      "title": "挑出成功的",
+      "en": "SELECT",
+      "oneLine": "用标记把转化子、重组子从背景里逐层挑出来。"
+    },
+    {
+      "id": "express",
+      "no": 6,
+      "title": "让它表达",
+      "en": "EXPRESS",
+      "oneLine": "给基因配上启动子与合适的宿主，让产物真的做出来。"
+    },
+    {
+      "id": "verify",
+      "no": 7,
+      "title": "验证",
+      "en": "VERIFY",
+      "oneLine": "从 DNA、RNA、蛋白三个层面确认接对了、做对了。"
+    },
+    {
+      "id": "apply",
+      "no": 8,
+      "title": "用起来",
+      "en": "APPLY",
+      "oneLine": "把验证过的体系放大，进入医药、农业或工业场景。"
+    }
+  ]
+}

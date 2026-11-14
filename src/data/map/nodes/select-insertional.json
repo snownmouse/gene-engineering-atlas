@@ -1,0 +1,41 @@
+{
+  "order": 27,
+  "zone": "select",
+  "id": "select-insertional",
+  "title": "插入失活",
+  "en": "Insertional Inactivation",
+  "lane": "select",
+  "level": "L2",
+  "kicker": "SELECT / 03",
+  "summary": "外源片段插进标记基因内部，抗性消失，用 replica plating 找出来。",
+  "blocks": [
+    {
+      "type": "list",
+      "ordered": true,
+      "items": [
+        "重组 DNA 转化后，先在含 **Amp** 的平板培养：含或不含重组质粒的受体菌都能长出菌落；",
+        "取菌落一部分接种到含 **Tet** 的平板；",
+        "在 Tet 平板上**不能生长**、而原菌落能生长的，才是在 tet^r 区插入外源 DNA 的克隆子。"
+      ]
+    },
+    {
+      "type": "note",
+      "tone": "exam",
+      "title": "两个失活位点",
+      "lines": [
+        "pBR322：BamH I 位于 tet^r 内，插入后四环素抗性失活。",
+        "pBR325：在 cm^r 内增加 EcoR I 位点，使 EcoR I 也成为插入失活位点。"
+      ]
+    },
+    {
+      "type": "note",
+      "tone": "caution",
+      "title": "影印平板的操作参数",
+      "lines": [
+        "初筛 Amp 100 μg/mL，37 ℃ 16–20 h；影印到 Tet 15 μg/mL，再培养 16–20 h。",
+        "影印用无菌绒布，先在主平板轻压、再压副平板，顺序不能反；每换一个抗性换一块绒布。",
+        "判读：主平板长、副平板不长的克隆才是插入失活的重组子；两边都长的是空载体。"
+      ]
+    }
+  ]
+}

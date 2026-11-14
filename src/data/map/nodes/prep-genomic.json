@@ -1,0 +1,58 @@
+{
+  "order": 32,
+  "zone": "prep",
+  "id": "prep-genomic",
+  "title": "基因组 DNA 制备",
+  "en": "Genomic DNA",
+  "lane": "prep",
+  "level": "L2",
+  "kicker": "PREP / 02",
+  "summary": "CTAB 与 SDS 两条抽提路线，按材料选。",
+  "blocks": [
+    {
+      "type": "p",
+      "text": "**CTAB 法（植物组织）**：CTAB 为阳离子去污剂，可溶解细胞膜并与核酸形成复合物；该复合物在高盐（>0.7 mol/L NaCl）中可溶。"
+    },
+    {
+      "type": "list",
+      "ordered": true,
+      "items": [
+        "组织粉碎：液氮冷冻后研磨成细粉。",
+        "细胞裂解：2% CTAB / 2-ME（十六烷基三甲基溴化铵 / 2-巯基乙醇）。",
+        "纯化 DNA：酚-氯仿抽提去蛋白。",
+        "沉淀 DNA：0.6 倍体积异丙醇或 2 倍体积乙醇。",
+        "除 RNA：RNase A。"
+      ]
+    },
+    {
+      "type": "p",
+      "text": "**SDS 抽提法（动物组织）**：组织剪小块，液氮冷冻研磨；培养细胞用胰酶消化松散后直接使用。裂解液含 EDTA、SDS 及 RNA 酶，并加蛋白酶 K；随后酚-氯仿抽提，0.6 倍异丙醇或 2 倍乙醇沉淀。"
+    },
+    {
+      "type": "p",
+      "text": "试剂作用：EDTA 螯合二价金属离子抑制 DNA 酶；SDS 使细胞膜降解并使脂质、蛋白质沉淀；RNA 酶消化 RNA；蛋白酶 K 水解蛋白质（含 DNA 酶、DNA 上蛋白），并有裂解细胞作用；酚使蛋白变性沉淀并抑制 DNA 酶；乙醇沉淀 DNA。"
+    },
+    {
+      "type": "p",
+      "text": "**试剂盒提取酵母基因组（毕赤酵母 GS115）**：从平板挑单菌落，接 20 mL YPD，30℃、250 rpm 至 OD₆₀₀≈1.0；取 2 mL 菌液，室温 5 000 rpm 离心 10 min，弃上清。下文转速均按试剂盒原文记，未换算 ×g（rpm 与 ×g 的换算取决于转子半径，换机时按转子说明书复核）。"
+    },
+    {
+      "type": "list",
+      "ordered": true,
+      "items": [
+        "加 480 μL Buffer SE、20 μL lyticase、10 μL 2-ME，30℃、60 rpm 孵育 0.5 h。",
+        "室温 5 000 rpm 离心 5 min，沉淀原生质体。",
+        "弃上清，加 200 μL Buffer YL 与 50 mg 直径 0.5 mm 酸洗玻璃珠，高速涡旋 5 min 破菌，静置后取上清转 1.5 mL EP 管。",
+        "加 25 μL 蛋白酶 K 混匀，65℃ 水浴 30 min；加 5 μL RNase A，室温静置 10 min。",
+        "室温 12 000 rpm 离心 5 min，上清转新 EP 管。",
+        "加 220 μL Buffer YDL 与 220 μL 无水乙醇，震荡 30 s。",
+        "混合液转吸附管（2 mL EP 管），室温 12 000 rpm 1 min，弃滤液。",
+        "吸附管置新 2 mL EP 管，加 500 μL Buffer HB，12 000 rpm 1 min，弃滤液。",
+        "加 700 μL DNA Wash Buffer，12 000 rpm 1 min。",
+        "重复上一步一次。",
+        "吸附管置 2 mL 离心管，室温 12 000 rpm 3 min。",
+        "吸附管转新 1.5 mL EP 管，加 30 μL 65℃ 预热的 Elution Buffer，室温静置 5 min，12 000 rpm 1 min，收集 GS115 基因组。"
+      ]
+    }
+  ]
+}
