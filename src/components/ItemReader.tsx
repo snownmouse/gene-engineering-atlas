@@ -6,6 +6,7 @@ import { blocksForModule, findModule } from "../data/flow";
 import { BlockRenderer } from "./BlockRenderer";
 import { Figure } from "./figures/Figure";
 import { Inline } from "./Inline";
+import { DemoEmbed } from "./ProcessDemo";
 
 type Props = {
   stationId: string;
@@ -232,6 +233,17 @@ export function ItemReader({ stationId, items, volume, exam, stable }: Props) {
             </ul>
           </div>
         ) : null}
+
+        {data.limits ? (
+          <div className="k-item-limits">
+            <h3>难点与边界</h3>
+            <p>
+              <Inline text={data.limits} />
+            </p>
+          </div>
+        ) : null}
+
+        {data.demo ? <DemoEmbed id={data.demo} /> : null}
 
         {data.figure ? (
           <div className="k-item-figure">

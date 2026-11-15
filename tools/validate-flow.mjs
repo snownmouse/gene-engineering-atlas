@@ -28,7 +28,7 @@ const BLOCK_TYPES = new Set([
   "demo",
   "photo",
 ]);
-const DEMO_IDS = new Set(["pcr", "digest", "ligase", "transform"]);
+const DEMO_IDS = new Set(["pcr", "digest", "ligase", "transform", "sbs", "western", "crispr"]);
 const NOTE_TONES = new Set(["memory", "caution", "verify", "exam"]);
 const FIGURES = new Set([
   "plasmid-puc18",

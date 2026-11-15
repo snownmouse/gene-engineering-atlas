@@ -9,6 +9,7 @@ import { KNOWLEDGE_ITEMS } from "./items-knowledge";
 import { COVERAGE_ITEMS } from "./items-coverage";
 import { DEEPEN_ITEMS } from "./items-deepen";
 import { FINAL_ITEMS } from "./items-final";
+import { EXTEND_ITEMS } from "./items-extend";
 
 /**
  * 知识点页面层：一页只讲一件事，短、结构化、可扫读。
@@ -267,6 +268,35 @@ export const ITEMS_BY_MODULE: Record<string, KnowledgeItem[]> = {
         "应用方向：基因治疗、优生优育。",
       ],
       confuse: "它是背景事实，不是获取目的基因的操作路线。",
+    },
+    {
+      id: "seq-basics",
+      title: "拿到序列先做三件事",
+      en: "SEQUENCE CHECK",
+      kind: "方法",
+      line: "查登记号与版本、定读框、画限制性图谱；三件事做完再设计引物或合成，能少走一半弯路。",
+      params: [
+        "检索：GenBank、ENA、DDBJ 三库同步交换，同一条记录可能有多个登记号；引用时带 accession 与版本号（如 .1），版本变了说明序列被修正。",
+        "分库：RefSeq 的 NM_ / NR_ / NP_ / NC_ 前缀是整理过的参考序列，GenBank 的字母数字登记号是原始提交；同一基因两者可能不一致，先看版本与注释。",
+        "读框：双链各 3 个读框，共 6 个；从起始密码子（ATG，细菌也用 GTG / TTG）到终止密码子（TAA / TAG / TGA）为一条 ORF。",
+        "ORF 不等于基因：ORF 只说明「能翻译」，有没有启动子、RBS、内含子、信号肽，要回注释与 cDNA 验证。",
+        "限制性图谱：把酶切位点按环状序列坐标标出；跨 0 点按全长取模，同裂酶与甲基化敏感酶要分别标。",
+        "条件变了：线粒体、质体与部分原生生物使用不同遗传密码表（如线粒体 UGA 编色氨酸）；硒代半胱氨酸与吡咯赖氨酸靠终止密码子通读，不能按标准表直接截断。",
+        "什么时候失败：读错链或读框、漏掉外显子、把 SNP 当测序错误、用了被甲基化封闭的位点，都会让后面的引物、酶切与表达构建全部返工。",
+      ],
+      table: {
+        head: ["要查的", "看什么", "常见坑"],
+        rows: [
+          ["登记号", "accession + 版本；RefSeq 还是 GenBank", "同一基因多个登记号，版本不同序列不同"],
+          ["读框", "6 个读框；起始/终止密码子；遗传密码表", "反向链基因没取反向互补；线粒体密码表用错"],
+          ["酶切位点", "环状坐标、同裂酶、甲基化敏感", "跨 0 点算错；位点被 dam / dcm 甲基化封闭"],
+          ["注释", "启动子、RBS、内含子、信号肽", "把 ORF 当完整基因，缺少表达元件"],
+        ],
+        caption: "三件事的顺序不能反：先确认「是哪条序列」，再谈「怎么切、怎么表达」。",
+      },
+      confuse: "登记号相同但版本不同，序列可能已经改过；不写版本等于没写清楚。",
+      terms: ["orf", "target-gene"],
+      moduleId: "gene-source",
     },
   ],
   "restriction-enzyme": [
@@ -1163,7 +1193,7 @@ export const ITEMS_BY_MODULE: Record<string, KnowledgeItem[]> = {
 };
 
 /** 知识页、考点与易混对比按模块追加，不能整表覆盖原有条目 */
-for (const extraMap of [KNOWLEDGE_ITEMS, EXAM_ITEMS, COMPARE_ITEMS, COVERAGE_ITEMS, DEEPEN_ITEMS, FINAL_ITEMS]) {
+for (const extraMap of [KNOWLEDGE_ITEMS, EXAM_ITEMS, COMPARE_ITEMS, COVERAGE_ITEMS, DEEPEN_ITEMS, FINAL_ITEMS, EXTEND_ITEMS]) {
   for (const [moduleId, extra] of Object.entries(extraMap)) {
     ITEMS_BY_MODULE[moduleId] = [...(ITEMS_BY_MODULE[moduleId] ?? []), ...extra];
   }

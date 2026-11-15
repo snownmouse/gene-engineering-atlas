@@ -578,10 +578,365 @@ function TransformScene({ step }: { step: number }) {
   );
 }
 
+const SBS_BASES = ["A", "T", "C", "G", "A", "G"];
+const SBS_COLORS = ["#8d3b2f", "#3f5b73", "#7b6549", "#4a6b45", "#8d3b2f", "#3f5b73"];
+
+function SbsScene({ step }: { step: number }) {
+  const clustered = step >= 1;
+  const adding = step >= 2;
+  const imaging = step >= 3;
+  const unblocked = step >= 4;
+  const quality = step >= 5;
+  const added = adding ? Math.min(SBS_BASES.length, step >= 4 ? 4 : step >= 3 ? 3 : 1) : 0;
+
+  return (
+    <svg viewBox="0 0 760 300" role="img" aria-label="边合成边测序循环示意：每轮掺入一个封闭碱基并成像">
+      <text x="40" y="40" className="dm-label dm-label--faint">
+        流动池
+      </text>
+      <rect x="40" y="50" width="680" height="86" className="dm-faint" fill="none" />
+
+      {!clustered ? (
+        <g className="dm-fade">
+          {[0, 1, 2].map((row) => (
+            <g key={row}>
+              <rect x={70} y={66 + row * 22} width="26" height="12" className="dm-blue" />
+              <line x1="96" y1={72 + row * 22} x2="250" y2={72 + row * 22} className="dm-ink" />
+              <rect x="250" y={66 + row * 22} width="26" height="12" className="dm-red" />
+              <text x="288" y={76 + row * 22} className="dm-label dm-label--faint">
+                P5 — 插入片段 — P7
+              </text>
+            </g>
+          ))}
+          <text x="560" y="92" className="dm-label">
+            文库：片段 + 接头
+          </text>
+        </g>
+      ) : (
+        <g className="dm-fade">
+          {[
+            [110, 78],
+            [170, 104],
+            [232, 76],
+            [292, 108],
+            [352, 80],
+            [414, 106],
+            [474, 78],
+            [536, 104],
+            [598, 80],
+            [660, 106],
+          ].map(([x, y], index) => (
+            <circle
+              key={index}
+              cx={x}
+              cy={y}
+              r={index === 4 ? 11 : 8}
+              className={index === 4 ? "dm-red dm-thick" : "dm-faint"}
+              fill="none"
+            />
+          ))}
+          <text x="640" y="160" textAnchor="end" className="dm-label dm-label--faint">
+            一簇 = 一条模板的克隆
+          </text>
+        </g>
+      )}
+
+      {adding ? (
+        <g className="dm-fade">
+          <line x1="352" y1="80" x2="352" y2="148" className="dm-ink dm-thick" />
+          {SBS_BASES.slice(0, added).map((base, index) => (
+            <g key={`${base}-${index}`}>
+              <circle cx="352" cy={148 - index * 16} r="7" fill={SBS_COLORS[index]} />
+              <text x="368" y={152 - index * 16} className="dm-label">
+                {base}
+              </text>
+            </g>
+          ))}
+          <text x="352" y="170" textAnchor="middle" className="dm-label dm-label--faint">
+            新链 5′→3′
+          </text>
+          <text x="470" y="126" className="dm-label dm-label--red">
+            {unblocked ? "3′ 封闭已切除" : "3′ 封闭基团：一轮只加一个"}
+          </text>
+        </g>
+      ) : null}
+
+      {imaging ? (
+        <g className="dm-fade">
+          {SBS_BASES.slice(0, added).map((_, index) => (
+            <g key={`sig-${index}`}>
+              <line
+                x1={352 + 22 + index * 26}
+                y1="88"
+                x2={352 + 22 + index * 26}
+                y2={120 - index * 4}
+                className="dm-faint"
+                strokeDasharray="3 4"
+              />
+              <rect
+                x={344 + index * 26}
+                y={120 - index * 4}
+                width="16"
+                height="8"
+                fill={SBS_COLORS[index]}
+              />
+            </g>
+          ))}
+          <text x="560" y="200" className="dm-label dm-label--red">
+            成像：每簇读一个颜色
+          </text>
+        </g>
+      ) : null}
+
+      {quality ? (
+        <g className="dm-fade">
+          <text x="90" y="196" className="dm-label">
+            读长 2×50–300 bp
+          </text>
+          <line x1="90" y1="252" x2="430" y2="252" className="dm-ink" />
+          {[36, 34, 32, 30, 26, 21, 15, 9].map((height, index) => (
+            <rect
+              key={`q-${index}`}
+              x={96 + index * 42}
+              y={252 - height * 2}
+              width="18"
+              height={height * 2}
+              className="dm-faint-fill"
+            />
+          ))}
+          <text x="270" y="288" textAnchor="middle" className="dm-label dm-label--faint">
+            随循环数增加：phasing 累积、质量下降
+          </text>
+          <text x="470" y="252" className="dm-label">
+            Q30 与 PhiX 对照是上机质控硬指标
+          </text>
+        </g>
+      ) : null}
+    </svg>
+  );
+}
+
+function WesternScene({ step }: { step: number }) {
+  const transfer = step >= 1;
+  const blocked = step >= 2;
+  const primary = step >= 3;
+  const secondary = step >= 4;
+  const glow = step >= 5;
+
+  return (
+    <svg viewBox="0 0 760 300" role="img" aria-label="Western 转膜与显色示意：电泳分离、转膜、封闭、抗体与发光">
+      <text x="70" y="40" textAnchor="middle" className="dm-label dm-label--faint">
+        胶 / 膜
+      </text>
+
+      {!transfer ? (
+        <g className="dm-fade">
+          {[
+            [82, 84],
+            [82, 118],
+            [82, 166],
+            [82, 206],
+          ].map(([x, y], index) => (
+            <rect
+              key={index}
+              x={x - 16}
+              y={y}
+              width="32"
+              height={index === 0 ? 6 : index === 1 ? 9 : index === 2 ? 13 : 18}
+              className={index === 2 ? "dm-red" : "dm-faint-fill"}
+            />
+          ))}
+          <line x1="60" y1="70" x2="60" y2="250" className="dm-ink" />
+          <text x="40" y="76" textAnchor="end" className="dm-label dm-label--faint">
+            大
+          </text>
+          <text x="40" y="246" textAnchor="end" className="dm-label dm-label--faint">
+            小
+          </text>
+          <text x="150" y="100" className="dm-label">
+            SDS-PAGE：按分子量分开
+          </text>
+        </g>
+      ) : (
+        <g className="dm-fade">
+          <rect x="60" y="78" width="140" height="150" className="dm-faint" fill="none" />
+          <rect x="60" y="78" width="140" height="60" className="dm-blue" fill="none" />
+          <text x="130" y="112" textAnchor="middle" className="dm-label">
+            膜
+          </text>
+          <text x="130" y="160" textAnchor="middle" className="dm-label dm-label--faint">
+            胶
+          </text>
+          <path d="M 214 120 h 60" className="dm-red dm-thick" />
+          <path d="M 274 120 l -10 -6 v 12 z" className="dm-red-fill" />
+          <text x="290" y="124" className="dm-label dm-label--red">
+            电场：胶 → 膜
+          </text>
+          <rect x="62" y="146" width="136" height="12" className="dm-faint-fill" />
+          <text x="60" y="256" className="dm-label dm-label--faint">
+            湿转冰浴，防过热与凝胶变形
+          </text>
+        </g>
+      )}
+
+      {blocked ? (
+        <g className="dm-fade">
+          <rect x="430" y="78" width="250" height="120" className="dm-faint" fill="none" />
+          {[
+            [456, 98],
+            [492, 106],
+            [534, 96],
+            [576, 110],
+            [618, 100],
+            [656, 112],
+            [470, 140],
+            [512, 150],
+            [556, 138],
+            [600, 152],
+            [644, 142],
+          ].map(([x, y], index) => (
+            <circle key={index} cx={x} cy={y} r="5" className="dm-faint-fill" />
+          ))}
+          <text x="555" y="220" textAnchor="middle" className="dm-label">
+            封闭：奶 / BSA 盖住空白位点
+          </text>
+        </g>
+      ) : null}
+
+      {primary ? (
+        <g className="dm-fade">
+          <path
+            d="M 556 140 l -8 -12 M 556 140 l 8 -12 M 556 128 v -10"
+            className="dm-red dm-thin"
+          />
+          <text x="555" y="240" textAnchor="middle" className="dm-label dm-label--red">
+            一抗 1:1 000–1:5 000
+          </text>
+        </g>
+      ) : null}
+
+      {secondary ? (
+        <g className="dm-fade">
+          <circle cx="556" cy="106" r="9" className="dm-enzyme-ring" />
+          <text x="556" y="110" textAnchor="middle" className="dm-label">
+            HRP
+          </text>
+          <text x="664" y="240" textAnchor="middle" className="dm-label dm-label--red">
+            二抗：种属必须配对
+          </text>
+        </g>
+      ) : null}
+
+      {glow ? (
+        <g className="dm-fade">
+          <circle cx="556" cy="140" r="26" className="dm-red" fill="none" opacity="0.35" />
+          <circle cx="556" cy="140" r="16" className="dm-red" fill="none" />
+          <text x="555" y="268" textAnchor="middle" className="dm-label dm-label--red">
+            ECL 发光；条带过曝就不能定量
+          </text>
+        </g>
+      ) : null}
+    </svg>
+  );
+}
+
+function CrisprScene({ step }: { step: number }) {
+  const cut = step >= 1;
+  const branch = step >= 2;
+  const nhej = step >= 3;
+  const hdr = step >= 4;
+  const check = step >= 5;
+
+  return (
+    <svg viewBox="0 0 760 300" role="img" aria-label="Cas9 切割与 NHEJ / HDR 两条修复路径示意">
+      <text x="40" y="30" className="dm-label dm-label--faint">
+        靶位点
+      </text>
+      <line x1="120" y1="76" x2="620" y2="76" className="dm-ink" />
+      <line x1="120" y1="98" x2="620" y2="98" className="dm-ink" />
+      <text x="120" y="64" className="dm-label dm-label--faint">
+        5′
+      </text>
+      <text x="628" y="64" className="dm-label dm-label--faint">
+        3′
+      </text>
+      <text x="470" y="118" className="dm-label dm-label--red">
+        PAM · NGG
+      </text>
+
+      {!cut ? (
+        <g className="dm-fade">
+          <circle cx="360" cy="40" r="26" className="dm-faint" fill="none" />
+          <text x="360" y="45" textAnchor="middle" className="dm-label">
+            Cas9
+          </text>
+          <path d="M 344 56 q 16 22 32 0" className="dm-blue dm-thin" fill="none" />
+          <text x="400" y="34" className="dm-label dm-label--blue">
+            sgRNA 20 nt
+          </text>
+          <text x="360" y="150" textAnchor="middle" className="dm-label dm-label--faint">
+            找 PAM → 解链 → 向导配对
+          </text>
+        </g>
+      ) : (
+        <g className="dm-fade">
+          <line x1="430" y1="62" x2="430" y2="112" className="dm-red dm-dash" />
+          <text x="430" y="132" textAnchor="middle" className="dm-label dm-label--red">
+            平端双链断裂（PAM 上游约 3 bp）
+          </text>
+        </g>
+      )}
+
+      {branch ? (
+        <g className="dm-fade">
+          <path d="M 430 160 q -80 22 -120 50" className="dm-faint dm-thin" fill="none" />
+          <path d="M 430 160 q 80 22 120 50" className="dm-faint dm-thin" fill="none" />
+          <text x="280" y="222" textAnchor="middle" className="dm-label">
+            NHEJ · 全周期
+          </text>
+          <text x="580" y="222" textAnchor="middle" className="dm-label">
+            HDR · S / G2
+          </text>
+        </g>
+      ) : null}
+
+      {nhej ? (
+        <g className="dm-fade">
+          <line x1="250" y1="238" x2="330" y2="238" className="dm-ink" />
+          <line x1="338" y1="238" x2="406" y2="238" className="dm-ink" />
+          <text x="334" y="258" textAnchor="middle" className="dm-label dm-label--red">
+            1–10 bp indel
+          </text>
+        </g>
+      ) : null}
+
+      {hdr ? (
+        <g className="dm-fade">
+          <rect x="520" y="230" width="140" height="10" className="dm-blue" />
+          <text x="590" y="258" textAnchor="middle" className="dm-label dm-label--blue">
+            同源模板：精确替换 / 插入
+          </text>
+        </g>
+      ) : null}
+
+      {check ? (
+        <g className="dm-fade">
+          <text x="40" y="286" className="dm-label dm-label--red">
+            验证：等位比例 + 脱靶 + 大片段事件
+          </text>
+        </g>
+      ) : null}
+    </svg>
+  );
+}
+
 function Scene({ id, step }: { id: DemoId; step: number }) {
   if (id === "pcr") return <PcrScene step={step} />;
   if (id === "digest") return <DigestScene step={step} />;
   if (id === "ligase") return <LigaseScene step={step} />;
+  if (id === "sbs") return <SbsScene step={step} />;
+  if (id === "western") return <WesternScene step={step} />;
+  if (id === "crispr") return <CrisprScene step={step} />;
   return <TransformScene step={step} />;
 }
 

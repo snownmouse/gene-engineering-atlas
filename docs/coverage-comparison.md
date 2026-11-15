@@ -11,20 +11,22 @@
 
 站点基线：6 站、131 个知识模块、143 条路由、479 个知识页。以下三张表只做主题判断；教材名与页码只留在本文件，不进站点正文。
 
+改法口径（已定）：只做内容补充——缺的知识点、判读标准、条件边界加进现有模块；不改结构、版式与动效，不新增路由、不新做页面。补不齐的留白并写清缺什么，两种强争议口径并列保留。
+
 ## 表 1　教材有、站内没有或明显偏薄
 
 | # | 主题 | 站内现状 | 缺什么 | 建议 |
 |---|---|---|---|---|
-| 1 | 基因编辑 | `op-mutate` 表内一行「CRISPR 编辑」；`pX459` 图谱页；`struct-cas9` 结构页 | sgRNA–PAM–Cas9 切割机制、NHEJ/HDR 两条修复、脱靶与检测、ZFN/TALEN/碱基编辑/先导编辑、RNP–LNP–AAV 递送对比 | 新页 3 张，并入 `mutagenesis`；配 1 图（切割后两条修复路径） |
-| 2 | 哺乳动物细胞表达 | `part-host` 一行 CHO/HEK293；`medicine` 一行滴度；`yeast-glyco` 作对照 | 瞬时/稳定转染流程、筛选与扩增、糖基化差异、无血清悬浮培养、滴度与质量 | 新页 1–2 张，并入 `expression` |
-| 3 | 昆虫杆状病毒表达系统 | 仅 `medicine` 表中「HEK293 / 杆状病毒」一处 | 杆状病毒生活史、Bac-to-Bac、Sf9/High Five、分泌与翻译后修饰 | 新页 1 张，并入 `expression` |
-| 4 | RNA 干扰与基因沉默 | 仅 LNP 递送表提到 siRNA；无机制页 | dsRNA→Dicer→RISC→切割；siRNA/shRNA/miRNA/反义 RNA 的区别与用量 | 新页 1 张，并入 `verification`；配 1 图 |
-| 5 | 转基因动物制作 | `animal-delivery` 列了方法；`part-host` 列了受体 | 原核显微注射、ES 细胞打靶、体细胞核移植、Cre/loxP 条件敲除、鉴定与品系维持 | 新页 1 张，并入 `animal-delivery` |
-| 6 | 基因治疗 | `medicine` 一段定义；LNP/AAV/慢病毒递送表 | 体外/体内两条路线、CAR-T、已批产品与适应证、插入突变与免疫反应 | 新页 1 张，并入 `application` |
+| 1 | 基因编辑 | `op-mutate` 表内一行「CRISPR 编辑」；`pX459` 图谱页；`struct-cas9` 结构页 | sgRNA–PAM–Cas9 切割机制、NHEJ/HDR 两条修复、脱靶与检测、ZFN/TALEN/碱基编辑/先导编辑、RNP–LNP–AAV 递送对比 | 已做：3 页并入 `mutagenesis`（edit-crispr、edit-repair、edit-tools），配 1 图 |
+| 2 | 哺乳动物细胞表达 | `part-host` 一行 CHO/HEK293；`medicine` 一行滴度；`yeast-glyco` 作对照 | 瞬时/稳定转染流程、筛选与扩增、糖基化差异、无血清悬浮培养、滴度与质量 | 已做：1 页并入 `expression`（mammalian-expression），配 1 图 |
+| 3 | 昆虫杆状病毒表达系统 | 仅 `medicine` 表中「HEK293 / 杆状病毒」一处 | 杆状病毒生活史、Bac-to-Bac、Sf9/High Five、分泌与翻译后修饰 | 已做：1 页并入 `expression`（bevs），配 1 图 |
+| 4 | RNA 干扰与基因沉默 | 仅 LNP 递送表提到 siRNA；无机制页 | dsRNA→Dicer→RISC→切割；siRNA/shRNA/miRNA/反义 RNA 的区别与用量 | 已做：1 页并入 `verification`（rnai），配 1 图 |
+| 5 | 转基因动物制作 | `animal-delivery` 列了方法；`part-host` 列了受体 | 原核显微注射、ES 细胞打靶、体细胞核移植、Cre/loxP 条件敲除、鉴定与品系维持 | 已做：1 页并入 `animal-delivery`（transgenic-animal），配 1 图 |
+| 6 | 基因治疗 | `medicine` 一段定义；LNP/AAV/慢病毒递送表 | 体外/体内两条路线、CAR-T、已批产品与适应证、插入突变与免疫反应 | 已做：1 页并入 `application`（gene-therapy）；本轮补已批产品适应证、年龄与抗体门槛 |
 | 7 | 分子诊断与组学 | `sequencing` 有三平台；`qpcr` 完整；`hybridization` 有杂交 | 基因芯片、RNA-seq 流程、差异表达与生信入口 | 已做：2 页并入 `sequencing`（omics-map、molecular-diagnostics），配 1 图 |
-| 8 | 蛋白质层析纯化 | Ni-NTA、可溶性纯化、包涵体复性都有；IEX/GFC/HIC 只在表里点名 | 离子交换、凝胶过滤、疏水层析的分离原理、盐梯度、峰图判读、标签切除 | 新页 1 张，并入 `soluble-purification`；配 1 图 |
+| 8 | 蛋白质层析纯化 | Ni-NTA、可溶性纯化、包涵体复性都有；IEX/GFC/HIC 只在表里点名 | 离子交换、凝胶过滤、疏水层析的分离原理、盐梯度、峰图判读、标签切除 | 已做：1 页并入 `soluble-purification`（chromatography，配 1 图）；本轮补峰图判读与标签切除 |
 | 9 | 质粒提取与核酸定量 | `prep-plasmid` 节点列方法名（碱裂解、试剂盒、煮沸法、CsCl） | 碱裂解三步原理、柱纯化、A260/A280 与 A260/A230、回收率 | 已做：先加 mixed 规则保留原有正文，再补 3 页 |
-| 10 | 生物信息学基础与密码子优化 | `expression-boost` 讲措施；`gene-source` 讲来源 | 序列检索、ORF 判读、限制性图谱、密码子偏好与优化边界 | 新页 1 张，并入 `expression-boost` |
+| 10 | 生物信息学基础与密码子优化 | `expression-boost` 讲措施；`gene-source` 讲来源 | 序列检索、ORF 判读、限制性图谱、密码子偏好与优化边界 | 已做：codon-optimization 并入 `expression-boost`；本轮补 seq-basics 到 `gene-source` |
 | 11 | 无细胞表达系统 | `expression` 表内一行；`industry` 提及 | 裂解液体系、能量再生、批式/连续、产量瓶颈 | 已做：1 页并入 `expression`，配 1 图 |
 | 12 | 代谢工程与合成生物学 | `synthetic-genome` 讲 Sc2.0；glossary 有定义 | DBTL 循环、底盘、途径模块化、通量平衡 | 已做：1 页并入 `application` |
 | 13 | 转基因植物再生 | `plant-delivery` 有七法 | 组织培养再生、芽/根诱导、筛选与转基因植株鉴定 | 已做：1 页并入 `plant-delivery`，配 1 图 |
@@ -119,3 +121,37 @@
 | lab-biosafety | safety-principles | 等级由风险与操作共同决定 |
 
 配图 3 张：omics-layers、cell-free-flow、plant-regeneration。`prep-branch` 先加 mixed 规则再挂页，原有 34 段正文（含「只看三个指标」）完整保留。
+
+## 联网补齐（四批，已做）
+
+口径：只补现有条目，不新增路由；不写出处名与页码；找不到的继续留白。
+
+| 批次 | 位置 | 补的内容 | 来源类型 |
+|---|---|---|---|
+| 1 | op-digest 双酶切表 | 8 对酶逐格给 TaKaRa / NEB / Thermo 缓冲液与相对活性；4 条条件边界 | 三家官方缓冲液兼容表 |
+| 2 | molecular-diagnostics | mNGS 四类阳性判断值、对照与质控、报告范围、假阴性边界 | 2026 规范化应用指南、2020 专家共识、急危重症共识 |
+| 2 | lab-biosafety | BSL-3 两档压差、气流/HEPA/互锁、BSL-4 生命支持；WHO 与 GB 并列 | GB 19489—2008、WHO LBM 4th ed |
+| 3 | plant-regeneration | 拟南芥、烟草三个种、水稻、番茄的激素范围与外植体条件 | 原始论文与已发表体系 |
+| 4 | br-coordinates | pBR322 / pUC18 功能区与位点坐标，插入失活对应关系 | NEB 官方图谱、GenBank |
+| 4 | law-cn | 农业转基因生物安全管理条例条文号 | 国务院公报原文 |
+| 4 | safe-bsl、hyb-transfer、seq-endpoint | P/BSL 非一一对应、印迹三步机制、测序读长与失败模式 | 条例、GB 19489、方法学通识 |
+| 5 | seq-basics（gene-source） | 登记号与版本、6 个读框与 ORF 边界、环状限制性图谱、非标准遗传密码 | GenBank/ENA/DDBJ 说明、NCBI 遗传密码表 |
+| 5 | chromatography | 峰图判读（肩峰、电导峰、重复峰）、TEV/凝血酶切标签后二次纯化 | 厂商层析手册、方法学通识 |
+| 5 | gene-therapy | 已批产品适应证与年龄：Luxturna（RPE65）、Zolgensma（SMN1）、Casgevy（SCD/TDT，2026 扩到 ≥2 岁）、Hemgenix / Roctavian（血友病 B/A）、今又生与安柯瑞；抗体与器官功能门槛 | FDA/EMA 说明书与 2026 年补充批准公告 |
+| 6 | lab-biosafety | 废弃物出口（生物安全型双扉高压灭菌器、清洁侧门联锁）、不能高压物品的替代措施、污水与辅助区处理及效果监测、紫外线只作辅助；灭菌的三类失效 | GB 19489—2008 第 6.3.5 条 |
+
+第 2–4 批净增 2 067 汉字（不含数字与英文）；第 1 批为双酶切表逐格替换，未单列字数。仍未取到全文：2026 mNGS 指南「结果判读/报告」后半段、玉米/小麦/大豆再生的单一一手体系；GB 19489 的废弃物条款已补到「设施与流程」层，具体的灭菌温度—时间组合与化学消毒剂浓度表未逐条抄录。
+
+## 延展轮（第 7 批，已做）
+
+| 位置 | 补的内容 | 结果 |
+|---|---|---|
+| expression、application、sequencing、inclusion-body、hybridization、gel、marker、prokaryote-expression | 8 个新页：无细胞放大、通量平衡、mNGS 判读边界、复性边界、洗膜严格度、SDS-PAGE 分离、无抗性筛选、稀有密码子 | 共 3 976 汉字，全部并入已有模块 |
+| 15 个深度页 + gene-therapy、chromatography、lab-biosafety | 「难点与边界」：卡在哪、常见失败模式、什么条件下不适用 | 18 页，共 2 094 汉字 |
+| mNGS 阈值 | 统一 reads / RPM 阈值仍无权威通用口径，写清「各室自建验证」与四条判据 | 保留「此处未载」并说明原因 |
+| 植物再生激素 | 补出处性质与适用范围：已发表体系的条件性数值，无官方标准值 | 数值不新增，边界写明 |
+| BSL-3/4 | 数值沿用 GB 19489—2008 与 WHO 并列口径；补废弃物灭菌三类失效 | 不新增未核实数值 |
+| 10 个模块底部 | 延伸资源：Addgene、GenBank、UniProt、PDB、NCBI Datasets、SGD、NEB、Thermo、Cytiva、iBiology、MIT OCW、Learn.Genetics 等 | 28 条链接 + 8 张视频卡，逐条访问核验 |
+| seq-ngs、antibody-assays、edit-crispr | 新演示：SBS 测序循环、Western 转膜显色、Cas9 切割与修复 | 沿用现有演示的步进、播放与打印兜底 |
+
+外链核验记录：HHMI BioInteractive、EMA 深链与部分厂商深层页返回拦截或错误页，已去掉或改链总入口；NCBI Datasets 在人工浏览器可正常打开（自动化访问会先过 reCAPTCHA），故保留并注明去向。

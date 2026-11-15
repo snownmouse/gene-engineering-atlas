@@ -125,7 +125,7 @@ export interface TermsBlock {
 }
 
 /** 站内嵌过程演示：默认收起，点开才渲染 */
-export type DemoId = "pcr" | "digest" | "ligase" | "transform";
+export type DemoId = "pcr" | "digest" | "ligase" | "transform" | "sbs" | "western" | "crispr";
 
 export interface DemoBlock {
   type: "demo";

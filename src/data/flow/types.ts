@@ -41,6 +41,10 @@ export interface KnowledgeItem {
   line: string;
   /** 关键参数或判据 */
   params?: string[];
+  /** 难点与边界：卡在哪、常见失败模式、什么条件下不适用 */
+  limits?: string;
+  /** 本页配套的过程演示 */
+  demo?: import("../types").DemoId;
   /** 易混点 */
   confuse?: string;
   /** 真实存在的口径分歧，原样并列 */

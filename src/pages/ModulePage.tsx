@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { Link, Navigate, useLocation, useParams } from "react-router-dom";
 import { BlockRenderer } from "../components/BlockRenderer";
 import { ItemReader } from "../components/ItemReader";
+import { ExternalResources } from "../components/ExternalResources";
 import { KnowledgeTree } from "../components/KnowledgeTree";
 import { SiteFooter } from "../components/SiteFooter";
 import { SiteHeader } from "../components/SiteHeader";
@@ -219,6 +220,8 @@ export function ModulePage() {
               <KnowledgeTree modules={looseChildren} stationId={station.id} depth={1} />
             </section>
           )}
+
+          <ExternalResources moduleId={current.id} />
 
           <nav className="k-module-nav" aria-label="前后一则">
             {prev ? (

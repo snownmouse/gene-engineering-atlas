@@ -3635,79 +3635,80 @@
               "tone": "memory",
               "title": "常用 8 对酶的双切条件",
               "lines": [
-                "下表给 8 对常用酶在三种缓冲体系里的推荐缓冲与相对活性（%）。",
-                "TaKaRa 用 Universal Buffer（K/T/M/H/L），格内是终浓度倍数；NEB 用 NEBuffer 1–4 或 rCutSmart；Thermo 用 5-buffer/Tango。三家体系不同，推荐不同是体系差异，不是互相否定。"
+                "下表逐格给缓冲液与两酶相对活性（%），顺序与酶对一致；活性是各厂商在自己体系里测的，不能跨厂商直接比大小。",
+                "TaKaRa 用 Universal Buffer（L/M/H/K/T），格内倍数指终浓度；NEB 取现行 HF 酶在 rCutSmart 或 NEBuffer r1.1–r3.1 的数值；Thermo 取常规酶在 Tango 1×/2× 的区间。"
               ]
             },
             {
               "type": "table",
               "head": [
                 "酶对",
-                "TaKaRa（2021-04）",
-                "NEB（旧 4-buffer 表）",
-                "Thermo"
+                "TaKaRa（Universal Buffer）",
+                "NEB（HF 酶，现行缓冲）",
+                "Thermo（常规酶，Tango）"
               ],
               "rows": [
                 [
                   "BamH I + Hind III",
-                  "1×K",
-                  "NEBuffer 2（100 / 100）",
-                  "1× 或 2× Tango（100 / 50–100）"
+                  "1×K（100 / 40）",
+                  "rCutSmart（100 / 100）",
+                  "1× Tango（100 / 50–100）"
                 ],
                 [
                   "BamH I + EcoR I",
-                  "1×K",
-                  "EcoRI 缓冲（100 / 100）；现行用 EcoRI-HF + rCutSmart",
+                  "1×K（100 / 120）",
+                  "rCutSmart（100 / 100）",
                   "2× Tango（50–100 / 100）"
                 ],
                 [
                   "EcoR I + Hind III",
-                  "1×M",
-                  "NEBuffer 2（100 / 100）；EcoRI 非 HF 仍供专有缓冲",
+                  "1×M（100 / 100）",
+                  "rCutSmart（100 / 100）",
                   "2× Tango（100 / 50–100）"
                 ],
                 [
                   "EcoR V + Hind III",
-                  "1×K",
-                  "NEBuffer 2（75 / 100）",
+                  "1×K（120 / 40）",
+                  "rCutSmart（100 / 100）",
                   "2× Tango（100 / 50–100）"
                 ],
                 [
                   "Nco I + Hind III",
-                  "0.5×K + BSA",
-                  "NEBuffer 2（100 / 100）",
+                  "1×K + BSA（100 / 40）",
+                  "rCutSmart（100 / 100）",
                   "1× Tango（100 / 50–100）"
                 ],
                 [
                   "Not I + Hind III",
-                  "0.5×K + BSA",
-                  "NEBuffer 2（50 / 100）或分步",
-                  "2× Tango（20–50 / 50–100），偏低"
+                  "0.5×K + BSA（60 / 40）",
+                  "rCutSmart（100 / 100）",
+                  "2× Tango（20–50 / 50–100）"
                 ],
                 [
                   "Kpn I + BamH I",
-                  "0.5×K",
-                  "NEBuffer 1 或 2（100 / 75 或 75 / 100）",
-                  "1× Tango（20–50 / 100），建议分步"
+                  "0.5×K（<20 / 100）",
+                  "rCutSmart（100 / 100）",
+                  "1× Tango（20–50 / 100）"
                 ],
                 [
                   "Bgl II + Hind III",
-                  "1×K",
-                  "NEBuffer 2（75 / 100）",
+                  "1×K（100 / 40）",
+                  "无单管双 100%；r3.1（100 / 10），建议分步",
                   "2× Tango（100 / 50–100）"
                 ]
               ],
-              "caption": "每格为该厂商表在「两酶都尽量高」前提下的推荐缓冲，括号内为两酶相对活性（%）。TaKaRa 的 0.5×/1× 是 Universal Buffer 终浓度倍数，Thermo 的 1×/2× 是 Tango 浓度。"
+              "caption": "每格为「推荐缓冲（酶 1 / 酶 2 相对活性 %）」。TaKaRa 的 0.5×/1× 是 Universal Buffer 终浓度倍数，不是酶量倍数；Thermo 的 1×/2× 是 Tango 浓度；NEB 现行 HF 酶在 rCutSmart 中多为 100%，只有 Bgl II 例外。"
             },
             {
               "type": "note",
               "tone": "caution",
-              "title": "三处数据写法不一致",
+              "title": "四处写法不一致与条件边界",
               "lines": [
-                "**NEB 新旧并存**：旧 4-buffer 表按 NEBuffer 1–4 给相对活性；现行说明 >210 种酶在 rCutSmart 中 100%。下表列旧表数值，实操优先 rCutSmart（EcoRI 非 HF 除外）。",
+                "**NEB 新旧并存**：旧 4-buffer 表按 NEBuffer 1–4 给相对活性；现行 HF 酶在 rCutSmart 中多为 100%，旧表数值不再作为首选。Bgl II 不是 HF 酶，rCutSmart 中 <10%，必须换 r3.1 或分步。",
+                "**TaKaRa 的 0.5×K 有前提**：Kpn I + BamH I 官方双切表推荐 0.5×K，但单酶相对活性表在 1×K 下 Kpn I <20；两者条件不同，不能直接相除，实操先做小试或分步。",
                 "**Thermo 两套体系**：常规酶用 5-buffer/Tango；FastDigest 系列在单一 FastDigest Buffer 中 100%。不要把 FastDigest 的「单缓冲」结论套到常规酶上。",
-                "**TaKaRa 是终浓度倍数，不是酶量倍数**：格内 0.5×–2× 指 Universal Buffer 的终浓度，不要按「酶量要加倍」理解。同一酶对在不同体系里的推荐并存，不互相覆盖。",
-                "凡是两酶在任一缓冲里都达不到 100%，优先分步切；本表用「或分步」「建议分步」标出，不硬凑单管。"
+                "**温度也不完全一致**：TaKaRa 的 BamH I 标 30 ℃、Hind III 标 37 ℃，NEB/Thermo 多按 37 ℃；共孵育时按较低温度或分步，别只按缓冲液判断。",
+                "凡是两酶在任一缓冲里都达不到 100%，优先分步切；本表用「建议分步」标出，不硬凑单管。"
               ]
             }
           ]
